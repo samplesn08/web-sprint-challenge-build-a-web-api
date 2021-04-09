@@ -43,7 +43,7 @@ router.put('/:id', checkActionId, checkActionContents, (req, res) => {
 })
 
 router.delete('/:id', checkActionId, (req, res) => {
-    Actions.remove(req.action)
+    Actions.remove(req.params.id)
         .then(()=>{
             res.status(200).json({ message: "Action has been deleted" })
         })
