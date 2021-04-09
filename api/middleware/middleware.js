@@ -16,6 +16,18 @@ const checkProjectId = async (req, res, next) => {
     }
 }
 
+const checkProjectContents = (req, res, next) => {
+    const {id} = req.params;
+    Projects.get(id)
+        .then(project => {
+            if(!project.name || !project.description) {
+                res.status(400).json({ message: "Name and description are required" })
+            }else{
+                next()
+            }
+        })
+}
+
 const checkActionId = async (req, res, next) => {
     const {id} = req.params;
     try{
@@ -31,7 +43,21 @@ const checkActionId = async (req, res, next) => {
     }
 }
 
+const checkActionContents = (req, res, next) => {
+    const {id} = req.params;
+    Actions.get(id)
+        .then(action => {
+            if(!action.description || !action.notes) {
+                res.status(400).json({ message: "Description and notes are required" })
+            }else{
+                next()
+            }
+        })
+}
+
 module.exports = {
     checkProjectId,
-    checkActionId
+    checkProjectContents,
+    checkActionId,
+    checkActionContents
 }
