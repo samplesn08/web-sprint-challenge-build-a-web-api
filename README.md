@@ -123,7 +123,7 @@ After finishing your required elements, you can push your work further. These go
 
 **IMPORTANT:** Do not break any MPV functionality by adding "stretch" code! Keep an eye on those tests!
 
-- [ ] Deploy the API to Heroku.
+- [x] Deploy the API to Heroku. **https://samples-node-sprint-challenge1.herokuapp.com/api/actions**
 - [ ] Configure the API to support environment variables.
 - [ ] Use middleware for validation of incoming data.
 
@@ -139,8 +139,13 @@ After finishing your required elements, you can push your work further. These go
 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
-1. The core features of Node.js and Express and why they are useful.
-1. Understand and explain the use of Middleware.
-1. The basic principles of the REST architectural style.
-1. Understand and explain the use of Express Routers.
-1. Describe tooling used to manually test the correctness of an API.
+1. The core features of Node.js and Express and why they are useful.<br>
+--Node.js is a Javascript environment used for back-end development, and Express is a library within Node.  Express has many useful features to developers, and allows the quick and easy writing of HTTP request handlers and endpoints to create RESTful APIs. 
+1. Understand and explain the use of Middleware.<br>
+--Middleware is a function which can occur in the middle of an API call (for instance, to check that a POST request has all required fields completed before sending).  Middleware can also be global, meaning the function will run any time any HTTP call is made.  Middleware allows the developer to manipulate and control the flow of data to and from their API.  
+1. The basic principles of the REST architectural style.<br>
+--RESTful architecture is a standard for the building of APIs.  Servers that adhere to REST architecture are those that use standard HTTP calls (GET, POST, PUT, DELETE)
+1. Understand and explain the use of Express Routers.<br>
+--Routers are used to clean up our code.  Rather than the code for all endpoints being crammed into one file, we can seperate them out based on common endpoints.  For instance, having a Users Router that contains all of the HTTP requests for the '/users' endpoint, and a Friends Router containing all of the requests for the './friends' endpoint, instead of having both in the same file.
+1. Describe tooling used to manually test the correctness of an API.<br>
+--We can test the functionality of our API with tools like Postman or HTTPie.  These tools allow us to quickly make HTTP requests to our server, and see the output. 
